@@ -35,7 +35,6 @@ var touchObjectList;
 function setup() {
     createCanvas(windowWidth, windowHeight);
     background(0);
-    colorMode(HSB, 360, 100, 100, 100);
     touchObjectList = new Array();
     pDeviceOrientation = deviceOrientation;
 }
