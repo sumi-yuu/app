@@ -23,14 +23,9 @@ var touchObject = /** @class */ (function () {
         return isExist;
     };
     touchObject.prototype.draw = function () {
-         background(0); 
-  for(int i = 0; i < points.size(); i++){
-    point = (PVector)points.get(i); //配列から添え字の情報を取り出しPVectorにキャストして一時変数に格納しています
-    stroke(0,255,0); //色を緑にしています
-    noFill(); //円の内部を塗りつぶさないようにします
-    ellipse(point.x,point.y,100,100); //円を描いています//point.xとpoint.yで一時変数に格納した点の座標を取り出しています
-    textSize(32); //表示する点の座標の文字の大きさです
-    text("x:"+point.x+" y:"+point.y,point.x,point.y); //座標を表示しています
+                 noFill();
+        ellipse(this.touch.x, this.touch.y, 30, 30);
+        text(this.touch.x+"/"+this.touch.y,this.touch.x,this.touch.y)
     };
     return touchObject;
 }());
@@ -52,16 +47,7 @@ function draw() {
     background(0, 2);
     blendMode(ADD);
     stroke(255);
-    if (touches.length != 0) {
-        // 初出現のIDを探す
-        touches.forEach(function (element) {
-            console.log(element);
-            var isExist = false;
-            touchObjectList.forEach(function (object) {
-                if (element.id === object.id) {
-                    isExist = true;
-                }
-            });
+   
             if (isExist === false) {
                 // 要素の追加
                 touchObjectList.push(new touchObject(element));
