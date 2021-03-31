@@ -23,9 +23,9 @@ var touchObject = /** @class */ (function () {
         return isExist;
     };
     touchObject.prototype.draw = function () {
-                 noFill();
+        noFill();
         stroke(abs(this.id * 73) % 360, 70, 10);
-        strokeweight(3);
+        strokeWeight(this.count / 2);
         ellipse(this.touch.x, this.touch.y, 30, 30);
         text(this.touch.x+"/"+this.touch.y,this.touch.x,this.touch.y)
     };
@@ -35,6 +35,7 @@ var touchObjectList;
 function setup() {
     createCanvas(windowWidth, windowHeight);
     background(0);
+    colorMode(HSB, 360, 100, 100, 100);
     touchObjectList = new Array();
     pDeviceOrientation = deviceOrientation;
 }
