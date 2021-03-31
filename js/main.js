@@ -48,7 +48,16 @@ function draw() {
     background(0, 2);
     blendMode(ADD);
     stroke(255);
-   
+    if (touches.length != 0) {
+        // 初出現のIDを探す
+        touches.forEach(function (element) {
+            console.log(element);
+            var isExist = false;
+            touchObjectList.forEach(function (object) {
+                if (element.id === object.id) {
+                    isExist = true;
+                }
+            });
             if (isExist === false) {
                 // 要素の追加
                 touchObjectList.push(new touchObject(element));
