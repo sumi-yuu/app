@@ -25,7 +25,7 @@ var touchObject = /** @class */ (function () {
     touchObject.prototype.draw = function () {
         noFill();
         stroke(255, 255, 255);
-        strokeWeight(3);
+        strokeWeight(1);
         ellipse(this.touch.x, this.touch.y, 30, 30);
         text(this.touch.x+"/"+this.touch.y,this.touch.x,this.touch.y)
     };
@@ -35,7 +35,6 @@ var touchObjectList;
 function setup() {
     createCanvas(windowWidth, windowHeight);
     background(0);
-    colorMode(HSB, 360, 100, 100, 100);
     touchObjectList = new Array();
     pDeviceOrientation = deviceOrientation;
 }
