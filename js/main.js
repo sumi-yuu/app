@@ -24,7 +24,8 @@ var touchObject = /** @class */ (function () {
     };
     touchObject.prototype.draw = function () {
                  noFill();
-        stroke(255,255,255)
+        stroke(255,255,255);
+        strokeweight(3);
         ellipse(this.touch.x, this.touch.y, 30, 30);
         text(this.touch.x+"/"+this.touch.y,this.touch.x,this.touch.y)
     };
